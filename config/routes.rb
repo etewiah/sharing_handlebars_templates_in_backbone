@@ -4,6 +4,9 @@ Raffler::Application.routes.draw do
   end
 
   root to: 'main#index'
+
+  match 'server_rendering', to: "main#server_rendering"
+  
   match '*path', to: 'main#index'
 
   # The priority is based upon order of creation:

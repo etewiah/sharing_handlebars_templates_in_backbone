@@ -1,0 +1,3 @@
+<%= content_tag "div", "Loadin...", id: "container", data: {entries: Entry.all} do %>
+  	<%= render "entries/index", :hbs => {entries: Entry.all}, :partials => {:entry => (render "entries/entry")} %> 
+<% end %>
