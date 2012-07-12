@@ -1,5 +1,5 @@
 class Raffler.Views.Entry extends Backbone.View
-  template: JST['entries/entry']
+  template: HandlebarsTemplates['entries/entry']
   tagName: 'li'
   
   events:
@@ -17,5 +17,6 @@ class Raffler.Views.Entry extends Backbone.View
     @$('.winner').addClass('highlight')
 
   render: ->
-    $(@el).html(@template(entry: @model))
+    $(@el).html(@template( @model.toJSON() ))
+    #$(@el).html(@template({name: @model.get('name'), winner: @model.get('winner')}))
     this
