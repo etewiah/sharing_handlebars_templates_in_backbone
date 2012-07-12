@@ -1,5 +1,5 @@
 class Raffler.Views.EntriesIndex extends Backbone.View
-  template: JST['entries/index']
+  template: HandlebarsTemplates['entries/index']
 
   events:
     'submit #new_entry': 'createEntry'
@@ -10,8 +10,9 @@ class Raffler.Views.EntriesIndex extends Backbone.View
     @collection.on('add', @appendEntry, this)
 
   render: ->
-    $(@el).html(@template())
-    @collection.each(@appendEntry)
+    $(@el).html( @template( {entries: @collection.toJSON()} ) )
+    #$(@el).html(@template())
+    #@collection.each(@appendEntry)
     this
     
   appendEntry: (entry) =>

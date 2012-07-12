@@ -1,0 +1,18 @@
+<h1>Backbone Demo</h1>
+
+<form id="new_entry">
+  <input type="text" name="name" id="new_entry_name">
+  <input type="submit" value="Add">
+</form>
+
+
+<h3>Entries</h3>
+<ul id="entries">
+   {{#entries}}
+      <li>{{name}}</li>
+      
+    {{/entries}}
+</ul>
+
+
+<button id="draw">Draw Winner</button>
